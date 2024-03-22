@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "8PMVfu8h/3PgkkGXEhzkQWODPYQ7EuharJVSVz6NDcLnC4/wYTCzHdJ6HkP3djIwF+oKMRM7daDAz7qd7addAQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Familia\\Projects\\SevenDaysOfPokemon\\SevenDaysOfPokemon.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Familia\\.nuget\\packages\\restsharp\\110.2.0\\restsharp.110.2.0.nupkg.sha512",
+    "C:\\Users\\Familia\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
+    "C:\\Users\\Familia\\.nuget\\packages\\system.text.json\\7.0.2\\system.text.json.7.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

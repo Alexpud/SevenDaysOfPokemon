@@ -1,0 +1,17 @@
+C:\Users\Familia\Projects\SevenDaysOfPokemon\bin\Debug\net8.0\SevenDaysOfPokemon.exe
+C:\Users\Familia\Projects\SevenDaysOfPokemon\bin\Debug\net8.0\SevenDaysOfPokemon.deps.json
+C:\Users\Familia\Projects\SevenDaysOfPokemon\bin\Debug\net8.0\SevenDaysOfPokemon.runtimeconfig.json
+C:\Users\Familia\Projects\SevenDaysOfPokemon\bin\Debug\net8.0\SevenDaysOfPokemon.dll
+C:\Users\Familia\Projects\SevenDaysOfPokemon\bin\Debug\net8.0\SevenDaysOfPokemon.pdb
+C:\Users\Familia\Projects\SevenDaysOfPokemon\bin\Debug\net8.0\RestSharp.dll
+C:\Users\Familia\Projects\SevenDaysOfPokemon\obj\Debug\net8.0\SevenDaysOfPokemon.csproj.AssemblyReference.cache
+C:\Users\Familia\Projects\SevenDaysOfPokemon\obj\Debug\net8.0\SevenDaysOfPokemon.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Familia\Projects\SevenDaysOfPokemon\obj\Debug\net8.0\SevenDaysOfPokemon.AssemblyInfoInputs.cache
+C:\Users\Familia\Projects\SevenDaysOfPokemon\obj\Debug\net8.0\SevenDaysOfPokemon.AssemblyInfo.cs
+C:\Users\Familia\Projects\SevenDaysOfPokemon\obj\Debug\net8.0\SevenDaysOfPokemon.csproj.CoreCompileInputs.cache
+C:\Users\Familia\Projects\SevenDaysOfPokemon\obj\Debug\net8.0\SevenDaysOfPokemon.csproj.CopyComplete
+C:\Users\Familia\Projects\SevenDaysOfPokemon\obj\Debug\net8.0\SevenDaysOfPokemon.dll
+C:\Users\Familia\Projects\SevenDaysOfPokemon\obj\Debug\net8.0\refint\SevenDaysOfPokemon.dll
+C:\Users\Familia\Projects\SevenDaysOfPokemon\obj\Debug\net8.0\SevenDaysOfPokemon.pdb
+C:\Users\Familia\Projects\SevenDaysOfPokemon\obj\Debug\net8.0\SevenDaysOfPokemon.genruntimeconfig.cache
+C:\Users\Familia\Projects\SevenDaysOfPokemon\obj\Debug\net8.0\ref\SevenDaysOfPokemon.dll
