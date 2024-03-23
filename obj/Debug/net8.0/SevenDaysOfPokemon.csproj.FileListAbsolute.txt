@@ -15,3 +15,4 @@ C:\Users\Familia\Projects\SevenDaysOfPokemon\obj\Debug\net8.0\refint\SevenDaysOf
 C:\Users\Familia\Projects\SevenDaysOfPokemon\obj\Debug\net8.0\SevenDaysOfPokemon.pdb
 C:\Users\Familia\Projects\SevenDaysOfPokemon\obj\Debug\net8.0\SevenDaysOfPokemon.genruntimeconfig.cache
 C:\Users\Familia\Projects\SevenDaysOfPokemon\obj\Debug\net8.0\ref\SevenDaysOfPokemon.dll
+C:\Users\Familia\Projects\SevenDaysOfPokemon\obj\Debug\net8.0\SevenDaysOfPokemon.sourcelink.json

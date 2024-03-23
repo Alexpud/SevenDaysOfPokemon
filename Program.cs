@@ -1,5 +1,4 @@
-﻿using RestSharp;
-using SevenDaysOfPokemon.Models;
+﻿using SevenDaysOfPokemon.Services;
 
 var pokemonsEscolhidos = new List<string>()
 {
@@ -7,89 +6,67 @@ var pokemonsEscolhidos = new List<string>()
     "steelix",
     "abra"
 };
-
-Console.WriteLine("Qual o seu nome?");
-var nome = Console.ReadLine();
+var NomePlayer = string.Empty;
 var escolhaPokemon = string.Empty;
-while (true)
+var pokemonService = new PokemonService();
+const int OpcaoSair = -1;
+
+NomePlayer = MenuService.ExibirBoasVindas();
+
+await Jogar();
+
+async Task Jogar()
 {
-    Console.WriteLine("-----------------------------------Menu-----------------------------------");
-
-    Console.WriteLine($"{nome} Voce deseja:");
-    if (!string.IsNullOrEmpty(escolhaPokemon))
+    int escolha = 0;
+    while (true)
     {
-        Console.WriteLine($"1 - Saber mais sobre {escolhaPokemon.ToUpper()}");
-        Console.WriteLine($"2 - Adotar {escolhaPokemon.ToUpper()}");
-        Console.WriteLine("3 - Voltar");
-        switch (Console.ReadKey().KeyChar)
-        {
-            case '1':
-                await ExibirInformacoesPokemons(new List<string>() { escolhaPokemon });
-                break;
-            case '2':
-                Console.WriteLine("Adotado!");
-                return 0;
-            case '3':
-                escolhaPokemon = string.Empty;
-                break;
-            default:
-                Console.WriteLine("Opção invalida");
-                break;
-        }
+        MenuService.ExibirMenuSuperior(NomePlayer);
+        if (!string.IsNullOrEmpty(escolhaPokemon))
+            await JogarComPokemonJaEscolhido();
+        else
+            escolha = await JogarSemPokemonEscolhido();
+        if (escolha == OpcaoSair)
+            return;
     }
-    else
-    {
-        Console.WriteLine("1 - Adotar um mascote virtual");
-        Console.WriteLine("2 - Ver seus mascotes");
-        Console.WriteLine("3 - Sair");
 
-        switch (Console.ReadKey().KeyChar)
-        {
-            case '1':
-                escolhaPokemon = AdotarUmMascote(pokemonsEscolhidos);
-                break;
-            case '2':
-                await ExibirInformacoesPokemons(pokemonsEscolhidos);
-                break;
-            case '3':
-                return 0;
-            default:
-                Console.WriteLine("Opção invalida");
-                break;
-        }
+}
+
+async Task<int> JogarSemPokemonEscolhido()
+{
+    MenuService.ExibirOpcoesSemPokemonEscolhido();
+    switch (Console.ReadKey().KeyChar)
+    {
+        case '1':
+            escolhaPokemon = pokemonService.AdotarUmMascote(pokemonsEscolhidos);
+            return 0;
+        case '2':
+            await pokemonService.ExibirInformacoesPokemons(pokemonsEscolhidos);
+            return 0;
+        case '3':
+            return OpcaoSair;
+        default:
+            MenuService.ExibirOpcaoInvalida();
+            return OpcaoSair;
     }
 }
 
-async Task ExibirInformacoesPokemons(List<string> pokemonsEscolhidos)
+
+async Task JogarComPokemonJaEscolhido()
 {
-    var pokemonClient = new PokemonClient();
-    foreach(var pokemon in pokemonsEscolhidos)
+    MenuService.ExibirOpcoesComPokemonEscolhido(escolhaPokemon);
+    switch (Console.ReadKey().KeyChar)
     {
-        var infoPokemon = await pokemonClient.ObterInformacaoPokemon(pokemon);
-        ImprimirDadosPokemon(infoPokemon);
+        case '1':
+            await pokemonService.ExibirInformacoesPokemons(new List<string>() { escolhaPokemon });
+            break;
+        case '2':
+            Console.WriteLine("Adotado!");
+            break;
+        case '3':
+            escolhaPokemon = string.Empty;
+            break;
+        default:
+            MenuService.ExibirOpcaoInvalida();
+            break;
     }
-}
-
-static void ImprimirDadosPokemon(Pokemon? pokemon)
-{
-    Console.WriteLine($"Nome: {pokemon?.Nome}");
-    Console.WriteLine($"Nome Pokemon: {pokemon.Nome}");
-    Console.WriteLine($"Altura: {pokemon.Altura}");
-    Console.WriteLine($"Peso: {pokemon.Peso}");
-    Console.WriteLine("Habilidades:");
-    foreach (var habilidade in pokemon.Habilidades)
-        Console.WriteLine(habilidade.Habilidade.Nome);
-    Console.WriteLine("--------------------------------------------------------------------------");
-}
-
-
-static string AdotarUmMascote(List<string> nomesPokemon)
-{
-    Console.WriteLine("-------------------------------ADOTAR UM MASCOTE--------------------------");
-    for (int i = 0; i < nomesPokemon.Count; i++)
-    {
-        Console.WriteLine($"{i} - {nomesPokemon[i].ToUpper()}");
-    }
-    var posicao = Console.ReadLine();
-    return nomesPokemon[Int32.Parse(posicao)];
 }

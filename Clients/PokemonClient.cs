@@ -1,6 +1,8 @@
 using RestSharp;
 using SevenDaysOfPokemon.Models;
 
+namespace SevenDaysOfPokemon.Clients;
+
 public class PokemonClient
 {
     private readonly RestClient _restClient;
@@ -13,7 +15,7 @@ public class PokemonClient
         };
         _restClient = new RestClient(httpClient);
     }
-    
+
     public  async Task<Pokemon?> ObterInformacaoPokemon(string nomePokemon)
     {
         var restRequest = new RestRequest(nomePokemon);
